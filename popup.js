@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const { font, language, enabled } = websites[link];
                 const li = document.createElement('li');
                 li.innerHTML = `
-                    ${link} (${language}, ${font}) - 
+                    ${link} (${language}, ${font}) -
                     <button class="remove-btn" data-link="${link}">Remove</button>
                     <label>
                         <input type="checkbox" class="enable-checkbox" data-link="${link}" ${enabled ? 'checked' : ''}> Enabled
