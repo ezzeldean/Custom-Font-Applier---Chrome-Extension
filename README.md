@@ -1,3 +1,5 @@
+![Screenshot of the extension](screenshot.png)
+
 # Font Switcher
 
 **Font Switcher** is a Chrome extension that allows you to add custom fonts from Google Fonts to specific websites. This can be useful for improving readability or simply for aesthetic preferences.
