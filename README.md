@@ -32,7 +32,7 @@
 
 ## Installation
 
-1.  Download the extension files from [GitHub](link-to-your-github-repo).
+1.  Download the extension files from [GitHub](Custom-Font-Applier---Chrome-Extension).
 2.  Open Chrome and go to `chrome://extensions/`.
 3.  Enable "Developer mode" in the top right corner.
 4.  Click "Load unpacked" and select the directory where you downloaded the extension files.
