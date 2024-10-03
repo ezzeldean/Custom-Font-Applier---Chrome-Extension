@@ -1,4 +1,4 @@
-![Screenshot of the extension](screenshot.png)
+![Screenshot of the extension](Screenshot.png)
 
 # Font Switcher
 
