@@ -1,22 +1,21 @@
-chrome.storage.sync.get(['selectedFont', 'selectedLanguage', 'link'], (data) => {
+chrome.storage.sync.get(['websites'], (data) => {
     const currentURL = window.location.href;
+    const websites = data.websites || {};
 
-    // Check if the current URL matches the stored link
-    if (currentURL.includes(data.link) && data.selectedFont) {
-        const fontLink = document.createElement('link');
-        fontLink.href = `https://fonts.googleapis.com/css2?family=${data.selectedFont.replace(/ /g, '+')}&display=swap`;
-        fontLink.rel = 'stylesheet';
-        document.head.appendChild(fontLink);
+    for (const link in websites) {
+        if (currentURL.includes(link) && websites[link].enabled) {
+            const { font } = websites[link];
+            const fontLink = document.createElement('link');
+            fontLink.href = `https://fonts.googleapis.com/css2?family=${font.replace(/ /g, '+')}&display=swap`;
+            fontLink.rel = 'stylesheet';
+            document.head.appendChild(fontLink);
 
-        // Apply the font to the body
-        document.body.style.fontFamily = `'${data.selectedFont}', sans-serif`;
-        
-        // Optional: Apply font to all text elements
-        const allTextElements = document.querySelectorAll('*');
-        allTextElements.forEach(el => {
-            el.style.fontFamily = `'${data.selectedFont}', sans-serif`;
-        });
-    } else {
-        console.warn('Font not applied: Either the URL does not match or no font is selected.');
+            document.body.style.fontFamily = `'${font}', sans-serif`;
+            const allTextElements = document.querySelectorAll('*');
+            allTextElements.forEach(el => {
+                el.style.fontFamily = `'${font}', sans-serif`;
+            });
+            break; // Apply only the first matching website's font
+        }
     }
 });
