@@ -29,6 +29,12 @@
 * Added features:
     * Enable/disable fonts for specific websites
     * Remove websites from the list
+ 
+### 1.2 (Enhanced Website Management - Fix Bugs)
+
+* Added features:
+    * SOLVED - Must refreash page to apply font
+    * Now you can live preview custom font immediately
 
 ## Installation
 
